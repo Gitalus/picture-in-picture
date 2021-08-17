@@ -1,5 +1,6 @@
 const videoElement = document.getElementById('video');
 const buttonStart = document.getElementById('button');
+const buttonStart = document.getElementById('button-request');
 
 // Prompt to select a media stream, pass to video element, then play
 async function selectMediaStream() {
