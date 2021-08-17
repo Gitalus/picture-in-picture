@@ -1,6 +1,6 @@
 const videoElement = document.getElementById('video');
 const buttonStart = document.getElementById('button');
-const buttonStart = document.getElementById('button-request');
+const buttonRequest = document.getElementById('button-request');
 
 // Prompt to select a media stream, pass to video element, then play
 async function selectMediaStream() {
@@ -25,5 +25,11 @@ buttonStart.addEventListener('click', async () => {
     buttonStart.disabled = false;
 });
 
-// Onload
-selectMediaStream();
+buttonRequest.addEventListener('click', async () => {
+    // Disable Button
+    buttonStart.disabled = true;
+    // Start Picture in Picture
+    await selectMediaStream();
+    // Reset Button
+    buttonStart.disabled = false;
+});
